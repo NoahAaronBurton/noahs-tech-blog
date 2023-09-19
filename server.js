@@ -1,7 +1,8 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const hbs = exphbs.create({})
+const hbs = exphbs.create({});
+const routes = require('./controllers');
 
 //express
 const app = express();
@@ -13,7 +14,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 //TODO: add controller
-//app.use(require('./controllers/'))
+app.use(routes);
 
 app.listen(PORT, () => {
     console.log('the server is running at localhost:' + PORT);
