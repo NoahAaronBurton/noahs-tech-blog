@@ -3,7 +3,7 @@
 //* In the context of MVC, it primarily falls under the Model component, responsible for managing data-related logic and operations. 
 
 const { Model, DataTypes} = require('sequelize');
-const sequelize = require ('../config/connection'); // todo: code this file
+const sequelize = require ('../config/connection');
 
 class User extends Model {}
 
