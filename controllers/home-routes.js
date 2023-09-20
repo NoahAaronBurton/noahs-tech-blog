@@ -7,7 +7,7 @@ router.get('/', (req, res) => { // todo: serialize data
      //const dishes = dishData.map((dish) => dish.get({ plain: true }));
      // We render the template, 'all', passing in dishes, a new array of serialized objects.
      //res.render('all', { dishes });
-    res.render('home');
+    res.render('home', { layout: 'main'});
 });
 
 module.exports = router;
