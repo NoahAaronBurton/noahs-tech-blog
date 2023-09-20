@@ -2,7 +2,7 @@
 
 //* In the context of MVC, it primarily falls under the Model component, responsible for managing data-related logic and operations. 
 
-const { Model, Datatypes} = require('sequelize');
+const { Model, DataTypes} = require('sequelize');
 const sequelize = require ('../config/connection'); // todo: code this file
 
 class User extends Model {}
@@ -20,7 +20,7 @@ User.init(
             allowNull: false,
         },
         password: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         }
     },
