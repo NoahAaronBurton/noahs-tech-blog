@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
+    {{!--* It serves as a skeleton or container for your content. --}}
+<head> 
     <meta charset="utf-8">
-    <title>Example App</title>
+    <title>Noah's Tech Blog</title>
 </head>
 <body>
-
-    {{{body}}}
+    <nav></nav>
+    <main>
+        <h2>these headers are from main.handlebars, which is a layout "parent" template</h2>
+        <h3>content from the child template:</h3>
+        {{{body}}}
+    </main>
 
 </body>
 </html>
