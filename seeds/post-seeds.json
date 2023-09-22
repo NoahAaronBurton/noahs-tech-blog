@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Default Layout in Handlebars",
+        "text": "Handlebars automatically uses the 'main' layout for all views unless you specify a different layout explicitly.",
+        "authorId": 1
+    },
+    {
+        "title": "Stashes in Handlebars",
+        "text" : "Triple 'staches indicate that the content of body should be interpreted as html. Double 'staches indicate just individual placeholders for strings",
+        "authorId": 2
+    }
+]
