@@ -130,6 +130,6 @@ dist
 .pnp.*
 
 links.md
-package-lock.json
 test.html
 nodemon.json
+package-lock.json
