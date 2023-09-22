@@ -1,10 +1,10 @@
 {{!--* homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in --}}
-{{#each posts as |post| }}
-<div class="card">
-    <div class="content">
-        <div class="header">{{post.title}}</div>
-        <div class="meta">Written by: {{post.user.username}}</div>
-        <div class="description"> {{ post.text }} </div>
-    </div>
+
+{{#each posts as |post|}}
+<h3 class="ui grey top attached header">
+  {{post.title}}
+</h3>
+<div class="ui attached segment">
+  <p>{{post.text}}</p>
 </div>
 {{/each}}

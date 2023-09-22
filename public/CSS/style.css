@@ -5,4 +5,7 @@
 }
 body {
     /* background-color: #333333; */
-  }
+}
+.eight-wide-column {
+    max-width: 50%;
+}
