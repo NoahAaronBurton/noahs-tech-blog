@@ -9,13 +9,13 @@ router.get('/', withAuth, async (req, res) => {
         const postData = await Post.findAll({ // todo: edit this?
             include: [
               {
-                attributes: { exclude: ['password'] },
-                order: [['name', 'ASC']],
+                model: User,
+                attributes: ['username'],
               },
             ],
           });
       
-          const posts = postData.map((post) => post.get({ plain: true }));
+        const posts = postData.map((post) => post.get({ plain: true }));
       
         //   console.log(posts);
       
@@ -32,15 +32,23 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login', async (req,res) => {
-  // redirect to home if logged in already
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
+  try {// redirect to home if logged in already
+    if (req.session.logged_in) {
+      res.redirect('/'); // todo: change redirect location if needed
+      return;
+    }
+
+    res.render('login');
+  } catch (err) {
+    console.error('Sequelize Error:', err.name);
+    console.error('Error Details:', err);
+    res.status(500).json(err);
   }
+  
 
 
 
-  res.render('login');
+  
 })
 
 
