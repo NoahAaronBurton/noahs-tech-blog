@@ -6,19 +6,21 @@
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="email" placeholder="Email Address">
+                        <input type="text" name="username" placeholder="Username" id="username-login">
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="lock icon"></i>
-                        <input type="password" name="password" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password" id="password-login">
                     </div>
                 </div>
-                <div class="ui fluid black submit button">Log in</div>
-                <div class="ui error message">Error processing request. Check the spelling of your username and password.</div>
-                <div class="ui message">Don't have an account?   a href: /reg<a href="/reg"></a></div>
+                <button class="ui fluid black submit button" id="submit">Log in</button>
+                <div class="ui error message"> <p> Error processing request. Check the spelling of your username and password.</p></div>
+                <div class="ui message">Don't have an account?   a href: /reg  <a href="/reg">Sign up</a></div>
             </div>
         </form>
     </div>
 </div>
+
+<script src="js/login.js"></script>

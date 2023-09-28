@@ -8,6 +8,7 @@ const seedDatabase = async () => {
     await sequelize.sync({force: true});
 
     await User.bulkCreate(userData, {
+        individualHooks: true, // this activates the bcrypt hooks when seeds are run
         returning: true,
     });
 
