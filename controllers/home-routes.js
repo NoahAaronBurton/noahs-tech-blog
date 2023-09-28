@@ -6,7 +6,7 @@ const withAuth = require('../utils/helpers/auth');
 
 router.get('/', withAuth, async (req, res) => { 
     try {
-        const postData = await Post.findAll({ // todo: edit this?
+        const postData = await Post.findAll({
             include: [
               {
                 model: User,
@@ -34,7 +34,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/login', async (req,res) => {
   try {// redirect to home if logged in already
     if (req.session.logged_in) {
-      res.redirect('/'); // todo: change redirect location if needed
+      res.redirect('/'); //! todo: change redirect location if needed
       return;
     }
 

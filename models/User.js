@@ -10,7 +10,7 @@ class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     }
-} //todo: add checkpassword method
+}
 
 User.init(
     {
@@ -28,7 +28,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         }
-    }, //todo: add hooks for bcrypt
+    },
     {
         hooks: {
           beforeCreate: async (newUserData) => {

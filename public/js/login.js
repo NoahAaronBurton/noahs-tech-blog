@@ -10,7 +10,7 @@ const logInForm = async (event) =>{
     if (username && password) {
         const response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ username, password }), //* this is where req.body is defined on the front end
             headers: { 'Content-Type': 'application/json'},
         });
         if (response.ok) {

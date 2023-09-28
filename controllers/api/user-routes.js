@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {User} = require('../../models');
-//todo: fix 400 error
+
 router.post('/login', async (req, res) => {
     try {
         console.log('POST request to /login received')

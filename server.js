@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers: withAuth})
 
 const sess = {
-  secret: 'i dont know',
+  secret: 'green dinosaur',
   cookie: {}, // todo: add cookie, same site, etc
   resave: false,
   saveUninitialized: true,
