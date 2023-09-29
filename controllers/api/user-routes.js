@@ -25,5 +25,16 @@ router.post('/login', async (req, res) => {
         console.error('Error in /login:', err);
         res.status(500).json({ error: "Internal Server Error" })
     }
-})
+});
+
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
+  
 module.exports = router;
