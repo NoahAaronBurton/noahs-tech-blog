@@ -34,7 +34,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/login', async (req,res) => {
   try {// redirect to home if logged in already
     if (req.session.logged_in) {
-      res.redirect('/'); //! todo: change redirect location if needed
+      res.redirect('/');
       return;
     }
 
@@ -45,11 +45,19 @@ router.get('/login', async (req,res) => {
     res.status(500).json(err);
   }
   
+});
 
+router.get('/sign-up', async (req, res) => {
+  try {
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
 
-
-  
-})
+    res.render('sign-up');
+  } catch (err) {
+    res.status(500).json(err);
+  }});
 
 
 module.exports = router;

@@ -1,6 +1,22 @@
 const router = require('express').Router();
 const {User} = require('../../models');
 
+router.post('/', async (req,res) => {
+  try {
+    const newUser= await User.create(req.body);
+    req.session.save (() => {
+      req.session.user_id = newUser.id;
+      req.session.logged_in = true;
+      res.status(200).json(newUser);
+    })
+  }
+  catch (err) {
+    console.error('Sequelize Error:', err.name);
+    console.error('Error Details:', err);
+    res.status(500).json(err);
+  }
+})
+
 router.post('/login', async (req, res) => {
     try {
         console.log('POST request to /login received')
@@ -35,6 +51,7 @@ router.post('/logout', (req, res) => {
     } else {
       res.status(404).end();
     }
-  });
+});
+
   
 module.exports = router;
