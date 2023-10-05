@@ -16,7 +16,12 @@ const hbs = exphbs.create({ helpers: withAuth})
 
 const sess = {
   secret: 'green dinosaur',
-  cookie: {}, // todo: add cookie, same site, etc
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  }, // todo: add cookie, same site, etc
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
