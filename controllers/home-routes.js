@@ -4,7 +4,7 @@ const withAuth = require('../utils/helpers/auth');
 // const bodyParser
 
 
-router.get('/', withAuth, async (req, res) => { 
+router.get('/', async (req, res) => { 
     try {
         const postData = await Post.findAll({
             include: [
