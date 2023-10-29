@@ -2,7 +2,7 @@
 <h2 class="ui header">Recent Posts:</h2>
 {{#each posts as |post|}}
 <h3 class="ui grey top attached header">
-  {{post.title}}
+ <a href="/post/{{post.id}}">{{post.title}}</a> 
 </h3>
 <div class="ui attached segment">
   <p>{{post.text}}</p>

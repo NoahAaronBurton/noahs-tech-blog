@@ -31,6 +31,29 @@ router.get('/', async (req, res) => {
     }
 });
 
+//! post without an S
+router.get('/post/:postId', async (req,res) => {
+  try{
+    console.log(req.params.postId)
+    const postData = await Post.findByPk(req.params.postId, {
+      include: User,
+    });
+    console.log(postData);
+    if (!postData) {
+      res.status(404).json({message: 'bad request for post id...'})
+      return;
+    }
+    const post = postData.get({ plain: true});
+    console.log('this is sent to the front end: \n');
+    console.log(post);
+
+    res.render('post', { layout: 'main', post });
+  } catch (err) {
+      res.status(500).json({ error: "Internal Server Error" })
+  }
+} );
+
+
 router.get('/login', async (req,res) => {
   try {// redirect to home if logged in already
     if (req.session.logged_in) {
@@ -59,5 +82,6 @@ router.get('/sign-up', async (req, res) => {
     res.status(500).json(err);
   }});
 
+  
 
 module.exports = router;
