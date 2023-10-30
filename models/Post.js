@@ -25,7 +25,8 @@ Post.init(
                 model: 'user',
                 key: 'id'
             }
-        }
+        },
+        // You don't need to create a field in the Post model to store comments because Sequelize handles the association for you
     },
     {
         sequelize,

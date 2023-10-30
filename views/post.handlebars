@@ -1,3 +1,25 @@
-<h1 class="ui grey top attached header">{{post.title}}</h1>
-<p>{{post.text}}</p>
-<p>Written by: <em>{{post.user.username}}</em> on <i>{{post.createdAt}}</i></p>
+<div class="ui raised very padded text container segment">
+    <div class="ui segment">
+        <h2 class="ui header">{{post.title}}</h2>
+        <p>{{post.text}}</p>
+        <p>Written by: <em>{{post.user.username}}</em> on <i>{{post.createdAt}}</i></p>
+    </div>
+    <div class="ui segment">
+        <h4 class="ui header">Comments</h4>
+            <div class="ui comments">
+                {{#each post.comments}}
+                    <div class="comment">
+                    <div class="content">
+                        <a class="author">{{this.user.username}}</a>
+                        <div class="metadata">
+                        <span class="date">{{this.createdAt}}</span>
+                        </div>
+                        <div class="text">{{this.commentText}}</div>
+                    </div>
+                    </div>
+                {{/each}}
+            </div>
+
+    </div>
+    
+</div>    

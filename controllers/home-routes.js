@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/helpers/auth');
 // const bodyParser
 
@@ -32,11 +32,25 @@ router.get('/', async (req, res) => {
 });
 
 //! post without an S
+//todo: get post comments
 router.get('/post/:postId', async (req,res) => {
   try{
-    console.log(req.params.postId)
     const postData = await Post.findByPk(req.params.postId, {
-      include: User,
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        },
+        {
+          model: Comment,
+          as: 'comments',
+          include: [
+            {
+              model: User,
+            }
+          ]
+        },
+      ],
     });
     console.log(postData);
     if (!postData) {
@@ -49,9 +63,11 @@ router.get('/post/:postId', async (req,res) => {
 
     res.render('post', { layout: 'main', post });
   } catch (err) {
-      res.status(500).json({ error: "Internal Server Error" })
+    console.error(err); // Log the error for debugging
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 } );
+
 
 
 router.get('/login', async (req,res) => {
