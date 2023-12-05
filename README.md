@@ -3,13 +3,23 @@
   
   
   ## Description
-  A blog app built with the MVC file structure.
+  A blog app built with the MVC file structure. Create an account	and write blog posts on your favorite technology topics.
+
+  Technologies used (client side):
+  - Handlebars
+  - Semantic UI
+
+  Technologies used (server side):
+  - Express
+  - Sequelize   
+  - Bcrypt for password hashing.
+  - RESTFUL API
 
 
   
-  - Purpose of Project:
+Purpose of Project:
 
-    Create an account		and write blog posts on your favorite technology topics.
+- This project demonstrates my ability to build an app within the Model-View-Controller development paradigm.  
   
   ## Table of Contents
 
