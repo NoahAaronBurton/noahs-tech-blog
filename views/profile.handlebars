@@ -13,7 +13,18 @@
             </div> 
                 
                 <button id="create-post" type="submit" class="ui fluid black submit button">Create Post</button>
-        </form>        
+        </form>
+        <h2 class="ui header">My Posts:</h2>
+        {{!-- display the user's posts --}}
+        {{#each posts}}
+            <div class="ui attached segment">
+                <h3 class="ui grey top attached header">
+                    <a href="/post/{{this.id}}">{{this.title}}</a>
+                </h3>
+                <p>{{this.text}}</p>
+                
+            </div>
+        {{/each}}
     </div>
 
 </div>
