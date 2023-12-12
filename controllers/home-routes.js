@@ -98,6 +98,16 @@ router.get('/sign-up', async (req, res) => {
     res.status(500).json(err);
   }});
 
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    console.log('profile route hit');
+    res.render('profile');
+  } catch (err) {
+    console.error('Sequelize Error:', err.name);
+    console.error('Error Details:', err);
+    res.status(500).json(err);
+  }
+});
   
 
 module.exports = router;
