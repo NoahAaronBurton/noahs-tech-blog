@@ -1,0 +1,21 @@
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui black header">Create a Post:</h2>
+        {{!-- form that matches Post.js model --}}
+        <form id ="post-form" class="ui large form" >
+            <div class="ui stacked segment">
+                <div class="field">
+                    <input type="text" name="title" id="post-title" placeholder="Give your Post a title">
+                </div>
+                <div class="field">
+                    <textarea name="text" id="post-text" placeholder="Write your post here"></textarea>
+                </div>        
+            </div> 
+                
+                <button id="create-post" type="submit" class="ui fluid black submit button">Create Post</button>
+        </form>        
+    </div>
+
+</div>
+<script src="js/post.js"></script>
+    
