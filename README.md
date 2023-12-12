@@ -43,6 +43,11 @@ Purpose of Project:
     
        
     npm run seeds && npm run start
+
+## Issues
+
+  Currently, users can create their own posts from the Profile Dashboard and view others' posts from Home.
+  Comments on posts to come in the future, but currently this feature doesn't work.
     
 ## License
 
